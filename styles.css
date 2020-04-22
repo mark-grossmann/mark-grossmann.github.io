@@ -1,0 +1,205 @@
+/* general/defualt prty prty prty things (& formatting)*/
+body {
+  margin: 0;
+  background-color: black;
+  padding: 0;
+}
+.ContainImg {
+/*putting pictures inside divs seems to be more predictable inside a grid?
+Like scale the div w/ the pic inside as opposed to scale it alone.
+This is just so that the pictures fill whatever div they're inside*/
+width:100%;
+height: auto;
+}
+h1 {
+  color: SteelBlue;
+  font-size: 3vw;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+}
+h2 {
+  color: SteelBlue;
+  font-size: 2vw;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+}
+h3{
+  color: black;
+  font-size: 2.4vw;
+  text-align: center;
+  font-family: 'Quattrocento', serif;
+}
+p {
+  font-size: 2vw;
+  line-height: 4vh;
+  font-family: 'Quattrocento', serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited  {
+  /*clicked already*/
+  color: black;
+}
+a:hover {
+  color: SteelBlue;
+  background-color: black;
+}
+a:active {
+  /*being clicked*/
+  color: SteelBlue;
+  background-color: AquaMarine;
+}
+
+/*moving onto grid things*/
+.GridWrapper {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-row: repeat(4, 1fr);
+grid-gap: 0px;
+align-content: center;
+justify-content: center;
+background-color: #fff;
+color: #444;
+}
+    .GridCell {
+      /*
+      I no longer need to see where the boxes are on the page.
+      background-color: #444;
+      color: #fff;
+      */
+      border-radius: 0px;
+      padding: 20px;
+      margin: 0;
+    }
+      .Logo {
+        grid-column: 1 ;
+        grid-row: 1 ;
+/*
+        width: 50%;
+        height: auto;
+*/
+        background-color: SteelBlue;
+      }
+      .Title {
+        grid-column: 2 / 5;
+        grid-row: 1 ;
+        font-family: 'Space Mono', monospace;
+        color: SteelBlue;
+        font-size: 5vw;
+        justify-content: center;
+        background-color: black;
+
+      }
+      .Sidebar {
+        grid-column-start: 1 ;
+        grid-column-end: 1 ;
+        grid-row-start: 2 ;
+        grid-row-end: 4 ;
+        }
+      .Content {
+        grid-column: 2 / 5;
+        grid-row: 2 / 4;
+      }
+      .Footer {
+        grid-column: 1 / 5;
+        grid-row: 5 ;
+        text-align: center;
+        background-color: black;
+      }
+
+/*Flexbox things*/
+#VertNav {
+  /*FOR SIDEBAR: container for vertical nav bar*/
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+  text-align: center;
+  float: left;
+}
+  .VertNavItem{
+    /*items in vertical left side nav bar container*/
+    color: black;
+    background-color: SteelBlue;
+    padding: 10% 20% 10% 20%;
+    margin: 1em;
+    font-size: 1.2vw;
+    font-family: 'Quattrocento', serif;
+  }
+#ContentFlex{
+  /*turn content grid area into a flex container*/
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Quattrocento', serif;
+}
+/*items in content flexbox:*/
+  .ContentImg{
+    flex: 2 1 40%;
+    align-self: flex-start;
+    width: 40%;
+    height: auto;
+    font-family: 'Quattrocento', serif;
+  }
+  .ContentItem{
+    flex: 0 1 40%;
+    font-family: 'Quattrocento', serif;
+    line-height: 3vh;
+    padding: 2vh 3vw 2vh 3vw;
+  }
+
+  @media (max-width: 900px) {
+    .Sidebar {
+      grid-column: 1 / 5;
+      grid-row: 2 / 4 ;
+      margin: 0 ;
+    }
+    #VertNav {
+      /*FOR SIDEBAR: container for vertical nav bar*/
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content:space-between;
+      float: none;
+
+    }
+      .VertNavItem{
+        /*items in vertical left side nav bar container*/
+        flex: 0 1 3em;
+        color: black;
+        background-color: SteelBlue;
+        padding-left: 30%;
+        padding-right: 30%;
+        padding-top: .5vh;
+        padding-bottom: .5vh;
+        font-size: 3vh;
+        margin: none;
+        margin-top: 1vh;
+        list-style-type: none;
+        text-align: center;
+        font-family: 'Quattrocento', serif;
+      }
+    #ContentFlex{
+      display: block;
+    }
+    .Content {
+      grid-column: 1 / 5;
+      grid-row: 4 / 6;
+      font-family: 'Quattrocento', serif;
+    }
+    .Footer {
+      grid-column: 1 / 5;
+      grid-row: 6 ;
+      text-align: center;
+      font-family: 'Quattrocento', serif;
+      background-color: black;
+      font-size: 3vh;
+    }
+
+  }
