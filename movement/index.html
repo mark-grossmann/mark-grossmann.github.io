@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+  </head>
+  <body>
+    <div id="overlay">
+			<div>
+				<p>Slowly move your cursor from the top left to the top right. <br/>explore this instrument.</p>
+        <button id="startButton">Click to start interactive Audio</button>
+			</div>
+		</div>
+    <div id="audioContainers" style="display: none;">
+      <audio loop>
+         <source src="./audio/v01.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v02.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v03.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v04.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v05.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v06.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v07.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v08.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v09.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v10.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v11.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v12.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v13.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v14.wav" type="audio/wav">
+      </audio>
+      <audio loop>
+         <source src="./audio/v15.wav" type="audio/wav">
+      </audio>
+    </div>
+    <script type="text/javascript">
+
+
+      startButton.addEventListener( 'click', init );
+
+
+      function mspScale(input, inpMin, inpMax, outMin, outMax) {
+        //based on |scale| obect from max/msp
+        let calc = (outMin + ((input-inpMin)*(outMax-outMin) / (inpMax-inpMin)));
+        return calc;
+      }
+
+      function setup() {
+        createCanvas(window.innerWidth, window.innerHeight);
+        frameRate(20);
+      }
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      let aspectRatio = height/width;
+      let count = 0;
+
+      // THESE TWO VARS WILL CONTROL AUDIO THINGS AND VISUAL THINGS
+      let fps; //control LFO rate for gain of all tracks and frames per second of the animation
+      let grid; // control which tracks are muted and how rows of squares there are on the screen
+      function draw() {
+        let xPos = mouseX; // get cursor X position
+        let yPos = mouseY;
+
+        let size = mspScale(xPos, 0, width, (width*1.5), width);
+
+        grid = Math.floor(mspScale(xPos, 0, width, 0, 9)) + 2; //I want the screen split in 10 distinct sections. later I'll use these to play different audio clips.
+        console.log(grid);
+        let vertGrid = Math.ceil(grid*aspectRatio); //so that fewer rows than collumns are drawn (depending on aspect ratio).
+        //The fans on my laptop were going insane with too many squares being drawn
+
+        fps = Math.ceil(mspScale(yPos, 0, height, 1, 60)); //if frame rate gets to zero it becomes stuck there. :(
+        frameRate(fps);
+
+        let a = 0;
+        let b = 0;
+        let c = (size/grid);
+        let d = (size/grid);
+        let r = random(9);
+        let iterations = random(18)+2;
+        let offset = ((size/(grid*2)) / iterations) - (size/670);
+
+        let slantA = random(3);
+        let slantB = random(3);
+        let slantC = random(3);
+        let slantD = random(3);
+
+
+        for (let z=0; z < vertGrid; z++){
+          for (let n=0; n < grid; n++){
+            for (let i=0; i < iterations; i++){
+              rect(a, b, c, d, r);
+              a += offset;
+              a += slantA;
+              //a = abs(a);
+              b += offset;
+              b += slantB;
+              //b = abs(b);
+              c -= (offset*2);
+              c -= slantC;
+              //c = abs(c);
+              d -= (offset*2);
+              d -= slantD;
+              //d = abs(d);
+              }
+            a = 0;
+            b = 0;
+            c = (size/grid);
+            d = (size/grid);
+            r = random(9);
+            iterations = random(18)+2;
+            offset = ((size/(grid*2)) / iterations) - (size/670);
+            translate((size/grid),0);
+
+            slantA = random(3);
+            slantB = random(3);
+            slantC = random(3);
+            slantD = random(3);
+          }
+        translate((-1*size), (size/grid));
+        count++;
+        //console.log(count);
+        }
+      }
+
+      // AUDIO THINGS
+      let audioIsInitialized = 0;
+      let audioCtx;
+      var source = [];
+      var trackGain = [];
+      let masterGain;
+      function init() {
+        document.getElementById( 'overlay' ).remove();
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        //set up gain node for all choir tracks to go into
+        masterGain = audioCtx.createGain();
+        masterGain.connect(audioCtx.destination); //connect master gain to device output
+
+        // let source = [];
+        // source[0] = audioCtx.createMediaElementSource(choir[0]);
+        // source[0].connect(audioCtx.destination);
+        // choir[0].play();
+
+        var choir = document.querySelectorAll("audio");
+        console.log(choir.length);
+        //set up an array of createMediaElementSource 's
+
+        let tempHolder;
+        let i;
+        for (i=0; i<choir.length; i++){
+          tempHolder = choir[i];
+          console.log(tempHolder);
+          //create specific source
+          source[i] = audioCtx.createMediaElementSource(choir[i]);
+          //create a gain for source
+          trackGain[i] = audioCtx.createGain();
+          console.log(trackGain[i]);
+          //connect source to gain and that track to the master gain
+          source[i].connect(trackGain[i])
+          trackGain[i].connect(masterGain);
+        }
+        let n;
+        for (n=0; n<choir.length; n++){
+          choir[n].play();
+        }
+
+        lfoGain();
+        audioIsInitialized = 1;
+      }
+      let lfo;
+      function lfoGain(){
+        //lfo for master gain
+        lfo = audioCtx.createOscillator();
+        lfo.frequency.value = fps;
+        lfo.connect(masterGain.gain);
+        lfo.start();
+      }
+
+      function muteTracks(){ //unmute different amounts of tracks based on cursor x value
+        switch(grid){
+          case 1: //unmute 1 voice
+            trackGain[0].gain.value = 1;
+            for (let a=1; a < trackGain.length; a++){
+              trackGain[a].gain.value = 0;
+            }
+            break;
+
+          case 2: //unmute 2 voices
+            trackGain[0].gain.value = 1;
+            trackGain[1].gain.value = 1;
+            for (let b=2; b < trackGain.length; b++){
+              trackGain[b].gain.value = 0;
+            }
+            break;
+
+          case 3: //unmute 3 voices
+            trackGain[0].gain.value = 1;
+            trackGain[1].gain.value = 1;
+            trackGain[2].gain.value = 1;
+            for (let c=3; c < trackGain.length; c++){
+              trackGain[c].gain.value = 0;
+            }
+            break;
+
+          case 4: //unmute 4 voices
+            trackGain[0].gain.value = 1;
+            trackGain[1].gain.value = 1;
+            trackGain[2].gain.value = 1;
+            trackGain[3].gain.value = 1;
+            for (let d=4; d < trackGain.length; d++){
+              trackGain[d].gain.value = 0;
+            }
+            break;
+
+          case 5: //unmute 6 voices
+            for (let e1=0; e1 < 6; e1++){
+              trackGain[e1].gain.value = 1;
+            }
+            for (let e2=6; e2 < trackGain.length; e2++){
+              trackGain[e2].gain.value = 0;
+            }
+            break;
+
+          case 6: //unmute 8 voices
+            for (let f1=0; f1 < 8; f1++){
+              trackGain[f1].gain.value = 1;
+            }
+            for (let f2=8; f2 < trackGain.length; f2++){
+              trackGain[f2].gain.value = 0;
+            }
+            break;
+
+          case 7: //unmute 10 voices
+            for (let g1=0; g1 < 10; g1++){
+              trackGain[g1].gain.value = 1;
+            }
+            for (let g2=10; g2 < trackGain.length; g2++){
+              trackGain[g2].gain.value = 0;
+            }
+            break;
+
+          case 8: //unmute 12 voices
+            for (let h1=0; h1 < 12; h1++){
+              trackGain[h1].gain.value = 1;
+            }
+            for (let h2=12; h2 < trackGain.length; h2++){
+              trackGain[h2].gain.value = 0;
+            }
+            break;
+
+          case 9: //unmute 13 voices
+            for (let i1=0; i1 < 13; i1++){
+              trackGain[i1].gain.value = 1;
+            }
+            for (let i2=13; i2 < trackGain.length; i2++){
+              trackGain[i2].gain.value = 0;
+            }
+            break;
+
+          case 10: //unmute all 15 voices
+            for (let j=0; j < trackGain.length; j++){
+              trackGain[j].gain.value = 1;
+            }
+            break;
+        }
+      }
+
+      changeLfoFreq =()=> {lfo.frequency.setValueAtTime(fps, audioCtx.currentTime);}
+      window.addEventListener('mousemove', changeLfoFreq);
+      window.addEventListener('mousemove', muteTracks);
+
+      // update scale when the window is resized
+      window.addEventListener('resize', setup);
+
+    </script>
+
+  </body>
+</html>
