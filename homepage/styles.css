@@ -13,24 +13,24 @@ height: auto;
 }
 h1 {
   color: SteelBlue;
-  font-size: 3vw;
+  font-size: 5vh;
   text-align: center;
   font-family: 'Space Mono', monospace;
 }
 h2 {
   color: SteelBlue;
-  font-size: 2vw;
+  font-size: 4vh;
   text-align: center;
   font-family: 'Space Mono', monospace;
 }
 h3{
   color: black;
-  font-size: 2.4vw;
+  font-size: 2.4vh;
   text-align: center;
   font-family: 'Quattrocento', serif;
 }
 p {
-  font-size: 2vw;
+  font-size: 2vh;
   line-height: 4vh;
   font-family: 'Quattrocento', serif;
 }
@@ -129,6 +129,8 @@ color: #444;
     margin: 1em;
     font-size: 1.2vw;
     font-family: 'Quattrocento', serif;
+    display: block;
+
   }
 #ContentFlex{
   /*turn content grid area into a flex container*/
@@ -151,6 +153,9 @@ color: #444;
     font-family: 'Quattrocento', serif;
     line-height: 3vh;
     padding: 2vh 3vw 2vh 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   @media (max-width: 900px) {
