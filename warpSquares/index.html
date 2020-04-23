@@ -1,52 +1,183 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>hello</title>
+  <head>
 
-  <!--stylesheet-->
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" type="text/css" href="../homepage/styles.css">
-  <!--FONTS-->
-  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-</head>
+    <title>hello</title>
 
-<div class="GridWrapper">
+    <!--stylesheet-->
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="../homepage/styles.css">
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  </head>
+  <body>
 
-  <div class="GridCell Logo">
-    <a href="../"><img class="ContainImg" src="../homepage/ParisFence.jpg" alt="Logo image: a photo from Parc Montsouris"></a>
-  </div>
+    <div class="GridWrapper">
 
-  <div class="GridCell Title">
-    <h1>Mark Grossmann</h1>
-    <div id="nav">
-      <li><a class="VertNavItem" href="../">Home</a></li>
-      <li><a class="VertNavItem" href="../movement">movement</a></li>
-      <li><a class="VertNavItem" id="CurrentPage" href="../warpSquares">warpSquares</a></li>
-      <li><a class="VertNavItem" href="../HyperFocus">HyperFocus</a></li>
+      <div class="GridCell Logo">
+        <a href="../"><img class="ContainImg" src="../homepage/ParisFence.jpg" alt="Logo image: a photo from Parc Montsouris"></a>
+      </div>
+
+      <div class="GridCell Title">
+        <h1>Mark Grossmann</h1>
+        <div id="nav">
+          <li><a class="VertNavItem" href="../">About</a></li>
+          <li><a class="VertNavItem" href="../movement">movement</a></li>
+          <li><a class="VertNavItem" id="CurrentPage" href="../warpSquares">warpSquares</a></li>
+          <li><a class="VertNavItem" href="../HyperFocus">Hyper Focus</a></li>
+        </div>
+      </div>
+
+      <div class="GridCell Content" id="ContentFlex">
+        <div>
+          <h2>warpSquares are images created with html canvas.</h2><br/>
+          <p>These are some of my favorite generated images.</p>
+        </div>
+        <div id="flexContainer">
+          <a href="./warp1.png"><div class="containImage"><img src="./warp1.png" alt="a result of a generative html-canvas piece"/></div></a>
+          <a href="./warp2.png"><div class="containImage"><img src="./warp2.png" alt="a result of a generative html-canvas piece"/></div></a>
+          <a href="./warp3.png"><div class="containImage"><img src="./warp3.png" alt="a result of a generative html-canvas piece"/></div></a>
+          <a href="./warp4.png"><div class="containImage"><img src="./warp4.png" alt="a result of a generative html-canvas piece"/></div></a>
+          <a href="./warp5.png"><div class="containImage"><img src="./warp5.png" alt="a result of a generative html-canvas piece"/></div></a>
+          <a href="./warp6.png"><div class="containImage"><img src="./warp6.png" alt="a result of a generative html-canvas piece"/></div></a>
+          <a href="./warp7.png"><div class="containImage"><img src="./warp7.png" alt="a result of a generative html-canvas piece"/></div></a>
+          <a href="./warp8.png"><div class="containImage"><img src="./warp8.png" alt="a result of a generative html-canvas piece"/></div></a>
+          <a href="./warp9.png"><div class="containImage"><img src="./warp9.png" alt="a result of a generative html-canvas piece"/></div></a>
+        </div>
+        <div class="ContentItem">
+          <div id="control">
+            <h2>Generate new ones here.</h2>
+            <button type="button" id="start" style="display: flex";>Generate</button>
+            <button type="button" id="pause" style="display: none;">Pause</button>
+            <button type="button" id="continue" style="display: none;">Continue</button>
+          </div>
+          <canvas id="warpSquares" width="600" height="400"></canvas>
+        </div>
+      </div>
+
+
+      <div class="GridCell Footer"><p>&#169; 2020 Mark Grossmann</p></div>
     </div>
-  </div>
+    <script type="text/javascript">
+      function randomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+        //i'll be using this a lot and don't feel like copy pasting it
+      }
 
-  <div class="GridCell Content" id="ContentFlex">
-    <div>
-      <h2>warpSquares are images created with html canvas.</h2><br/>
-      <p>These are some of my favorite generated images.</p>
-    </div>
-    <div id="flexContainer">
-      <a href="./warp1.png"><div class="containImage"><img src="./warp1.png" alt="a result of a generative html-canvas piece"/></div></a>
-      <a href="./warp2.png"><div class="containImage"><img src="./warp2.png" alt="a result of a generative html-canvas piece"/></div></a>
-      <a href="./warp3.png"><div class="containImage"><img src="./warp3.png" alt="a result of a generative html-canvas piece"/></div></a>
-      <a href="./warp4.png"><div class="containImage"><img src="./warp4.png" alt="a result of a generative html-canvas piece"/></div></a>
-      <a href="./warp5.png"><div class="containImage"><img src="./warp5.png" alt="a result of a generative html-canvas piece"/></div></a>
-      <a href="./warp6.png"><div class="containImage"><img src="./warp6.png" alt="a result of a generative html-canvas piece"/></div></a>
-      <a href="./warp7.png"><div class="containImage"><img src="./warp7.png" alt="a result of a generative html-canvas piece"/></div></a>
-      <a href="./warp8.png"><div class="containImage"><img src="./warp8.png" alt="a result of a generative html-canvas piece"/></div></a>
-      <a href="./warp9.png"><div class="containImage"><img src="./warp9.png" alt="a result of a generative html-canvas piece"/></div></a>
-    </div>
-  </div>
+      const canvas = document.querySelector('#warpSquares');
+      const context = canvas.getContext('2d');
+
+      let clock = 0;
+
+      let width;
+      let height;
+
+      // set the number of canvas pixels, scaled for screen resolution
+      let pxScale = window.devicePixelRatio;
+      let animation;
+
+      function setupWarpSquare() {
+        // fixed canvas size
+        width = canvas.width;
+        height = canvas.height;
+
+        // set the CSS display size
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+
+        canvas.width = width * pxScale;
+        canvas.height = height * pxScale;
+
+        // normalize the coordinate system
+        context.scale(pxScale, pxScale);
+
+        warpOffsets();//only do this once
+        //animation = requestAnimationFrame(slowFrameRate);
+      }
+
+      let stringPath;
+      let topLx, topLy, topRx, topRy, botRx, botRy, botLx, botLy;
+      let warpWidth = canvas.width * 0.75;
+      let warpHeight = canvas.height * 0.75;
+      topLx = (canvas.width - warpWidth) / 2;
+      topLy = (canvas.height - warpHeight) / 2;
+      topRx = canvas.width - topLx;
+      topRy = topLy;
+      botRx = topRx;
+      botRy = canvas.height - topRy;
+      botLx = topLx;
+      botLy = botRy;
+
+      let topLxOff, topLyOff, topRxOff, topRyOff, botRxOff, botRyOff, botLxOff, botLyOff;
+      function warpOffsets(){
+        topLxOff = randomInt(5) - 2;
+        topLyOff = randomInt(5) - 2;
+        topRxOff = randomInt(5) - 2;
+        topRyOff = randomInt(5) - 2;
+        botRxOff = randomInt(5) - 2;
+        botRyOff = randomInt(5) - 2;
+        botLxOff = randomInt(5) - 2;
+        botLyOff = randomInt(5) - 2;
+      }
+
+      function drawWarpSquare(){
+        // clear canvas
+        //context.clearRect(0, 0, canvas2.width, canvas2.height);
+
+        topLx += Math.cos(clock*topLxOff*0.06)*5;
+        topLy += Math.cos(clock*topLyOff*0.06)*5;
+        topRx += Math.cos(clock*topRxOff*0.06)*5;
+        topRy += Math.cos(clock*topRyOff*0.06)*5;
+        botRx += Math.cos(clock*botRxOff*0.06)*5;
+        botRy += Math.cos(clock*botRyOff*0.06)*5;
+        botLx += Math.cos(clock*botLxOff*0.06)*5;
+        botLy += Math.cos(clock*botLyOff*0.06)*5;
 
 
-  <div class="GridCell Footer"><p>© 2020 Mark Grossmann</p></div>
+        let topL = "M " + topLx.toString() + " " + topLy.toString() + " ";
+        let topR = "L " + topRx.toString() + " " + topRy.toString() + " ";
+        let botR = "L " + botRx.toString() + " " + botRy.toString() + " ";
+        let botL = "L " + botLx.toString() + " " + botLy.toString() + " ";
+        let fini = "z"
 
+        stringPath = topL + topR + botR + botL + fini;
+        let path = new Path2D(stringPath);
 
+        context.stroke(path);
+
+      }
+
+      function slowFrameRate(){
+        // if (clock%5==0){
+        //   drawWarpSquare();
+        // }
+        //I changed my mind- i dont want to slow the frame rate but I'm keeping this here in case I do in the future.
+        drawWarpSquare();
+        clock++
+        animation = requestAnimationFrame(slowFrameRate);
+      }
+
+      startAnimation = () => {
+        animation = requestAnimationFrame(slowFrameRate);
+        document.getElementById('start').remove();
+        document.getElementById('pause').style.display = "inline";
+        document.getElementById('continue').style.display = "inline";
+      }
+
+      pauseAnimation = () => cancelAnimationFrame(animation); // cancel requestAnimationFrame()
+
+      contAnimation = () => {
+        cancelAnimationFrame(animation); // to avoid compounding animation speed
+        animation = requestAnimationFrame(slowFrameRate);
+      }
+
+      document.getElementById('start').addEventListener('click', startAnimation);
+      document.getElementById('pause').addEventListener('click', pauseAnimation);
+      document.getElementById('continue').addEventListener('click', contAnimation);
+
+      window.addEventListener('load', setupWarpSquare);
+
+    </script>
+  </body>
 </html>

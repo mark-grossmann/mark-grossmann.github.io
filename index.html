@@ -1,47 +1,97 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>hello</title>
+  <head>
+    <title>hello</title>
 
-  <!--stylesheet-->
-  <link rel="stylesheet" type="text/css" href="./homepage/styles.css">
-  <!--FONTS-->
-  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-</head>
+    <!--stylesheet-->
+    <link rel="stylesheet" type="text/css" href="./homepage/styles.css">
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  </head>
+  <body>
 
-<div class="GridWrapper">
+    <div class="GridWrapper">
 
-  <div class="GridCell Logo">
-    <a href="./"><img class="ContainImg" src="./homepage/ParisFence.jpg" alt="Logo image: a photo from Parc Montsouris"></a>
-  </div>
+      <div class="GridCell Logo">
+        <a href="./"><img class="ContainImg" src="./homepage/ParisFence.jpg" alt="Logo image: a photo from Parc Montsouris"></a>
+      </div>
 
-  <div class="GridCell Title"><h1>Mark Grossmann</h1>
-    <div id="nav">
-      <li><a class="VertNavItem" id="CurrentPage" href="../">Home</a></li>
-      <li><a class="VertNavItem" href="./movement">movement</a></li>
-      <li><a class="VertNavItem" href="./warpSquares">warpSquares</a></li>
-      <li><a class="VertNavItem" href="./hyperFocus">HyperFocus</a></li>
+      <div class="GridCell Title"><h1>Mark Grossmann</h1>
+        <div id="nav">
+          <li><a class="VertNavItem" id="CurrentPage" href="../">About</a></li>
+          <li><a class="VertNavItem" href="./movement">movement</a></li>
+          <li><a class="VertNavItem" href="./warpSquares">warpSquares</a></li>
+          <li><a class="VertNavItem" href="./hyperFocus">Hyper Focus</a></li>
+        </div>
+      </div>
+
+
+
+      <div class="GridCell Content" id="ContentFlex">
+        <div class="ContentImg">
+          <h2>Hello.</h2>
+          <a href="./"><img class="ContainImg" src="./homepage/me.jpg" alt="your's truly"></a>
+        </div>
+        <div class="ContentItem" id="summary">
+          <p>Web Programmer</p>
+          <p>Audio Technician</p>
+          <p>Composer</p>
+          <p>Educator</p>
+        </div>
+
+        <div class="ContentItem" id="resume">
+          <h1>Resume</h1>
+          <h2>Relative Experience</h2>
+          <p><ul>
+            <li><h3>Tutor - NYU Music Technology Department:</h3><ul><i>
+              <li>Scope and organization of projects</li>
+              <li>User interface design</li>
+              <li>Audio reactive video processing using jitter and Max/Msp</li>
+              <li>Custom audio processing, interface, and automation in Ableton via Max4Live</li>
+              <li>OpenGL integration in Max/Msp</li>
+              <li>Analog sound synthesis: Buchla 100, MOTM unit, Putney, Minimoog, MS-20, etc.</li>
+              <li>Music production in Ableton Live</li>
+            </i></ul></li>
+            <li><h3>Media Intern - Harvestworks Digital Media Arts Center:</h3><ul><i>
+              <li>Applied Web Development skills to digitally archive the works of composers on Harvestwork's website using WordPress</li>
+              <li>Programmed in Max/Msp, installed, and maintained multi-speaker (multi-channel) pieces for Sound-Art composers</li>
+              <li>Taught weekly lessons on interfacing microcontrollers with Max/Msp</li>
+            </i></ul></li>
+            <li><h3>Studio Technician - NYU Music Technology Department:</h3><ul><i>
+              <li>Taught professors and students the signal flow, equipment, usage of NYU's studios.</li>
+              <li>Repaired and soldered broken equipment & cables.</li>
+              <li>Installed studios and performances spaces from scratch: preparing rack gear, making audio cables, snakes, and power cables of the correct type and length.</li>
+              <li>Weekly board calibration and maintenance of the studios</li>
+            </i></ul></li>
+            <li><h3>Teaching Assistant - NYU Music Technology: Summer Electronic Music Institute:</h3><ul><i>
+              <li>Taught and managed 20 high-school students in an NYU Music Technology primer.</li>
+
+            </i></ul></li>
+            <br/>
+          </p></ul>
+
+        <h2>Education</h2>
+          <p><ul>
+            <li><h3>New York University - Steinhardt; Courant: </h3><ul><i>
+              <li>B.M. in Music Theory and Composition | Minor in Web Programming and Applications</li>
+            </i></ul></li>
+            <li><h3>IRCAM at Centre Pompidou:</h3><ul><i>
+              <li>Intensive study of computer programming in music (Max/Msp)</li>
+            </i></ul></li>
+            <li><h3>&Eacute;cole Normale de Musique de Paris: </h3><ul><i>
+              <li>Classical composition and orchestration study under Michel Merlet: (winner of the
+                1966 Grand Prix de Rome and student of Olivier Messiaen)</li>
+            </i></ul></li>
+            <br/><br/>
+          </p></ul>
+
+        </div>
+      </div>
+
+
+      <div class="GridCell Footer"><p>&#169; 2020 Mark Grossmann</p></div>
+
     </div>
-  </div>
-
-
-
-  <div class="GridCell Content" id="ContentFlex">
-    <div class="ContentImg">
-      <h2>Hello.</h2>
-      <a href="./"><img class="ContainImg" src="./homepage/me.jpg" alt="your's truly"></a>
-    </div>
-    <div class="ContentItem">
-      <p>Web Programmer</p>
-      <p>Audio Technician</p>
-      <p>Composer</p>
-      <p>Educator.</p>
-    </div>
-  </div>
-
-
-  <div class="GridCell Footer"><p>© 2020 Mark Grossmann</p></div>
-
-
+  </body>
 </html>
