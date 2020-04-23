@@ -20,30 +20,40 @@ h1 {
   font-size: 5vw;
   text-align: center;
   font-family: 'Space Mono', monospace;
+  padding: 0;
+  margin: 0;
 }
 h2 {
   color: SteelBlue;
   font-size: 4vh;
   text-align: left;
   font-family: 'Space Mono', monospace;
+  padding: 0;
+  margin: 0;
 }
 h3{
   color: black;
   font-size: 2.4vh;
   text-align: left;
   font-family: 'Quattrocento', serif;
+  padding: 0;
+  margin: 0;
 }
 h4{
   color: SteelBlue;
   font-size: 4vh;
   text-align: justify;
   font-family: 'Space Mono', monospace;
+  padding: 0;
+  margin: 0;
 }
 p {
   font-size: 2vh;
-  line-height: 4vh;
+  line-height: 5vh;
   text-align: justify;
   font-family: 'Quattrocento', serif;
+  padding: 5px;
+  margin: 0;
 }
 a {
   text-decoration: none;
@@ -89,7 +99,9 @@ color: #444;
         grid-row: 1 ;
         justify-content: center;
         background-color: black;
-
+      }
+      .Title p{
+        color: white;
       }
       .Sidebar {
         grid-column-start: 1 ;
@@ -230,6 +242,7 @@ color: #444;
     }
     #sum-child{
       flex-grow: 2;
+      color: white;
     }
     .Content {
       grid-column: 1 / 4;
