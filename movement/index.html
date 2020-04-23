@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <head>
     <title>movement | Mark Grossmann</title>
 
@@ -29,25 +30,26 @@
 
 
       <div class="GridCell Content" id="ContentFlex">
-        <div id="overlay">
-    			<div>
-            <h2>"movement" is an installation-inspired web piece that explores the Web Audio API and p5js.</h2>
-            <p>
-              It is a reimagining of <a target="_blank" href="http://recodeproject.com/artwork/v2n3random-squares"><i>William Kolomyjec's 1977 'Random Squares.'</i></a><br/>
-              As you move your cursor from the left to the right, more nested sqaures are generated, and more vocal tracks are put into the mix.<br/>
-              up and down movement controls framerate as well as amplitude modulation of all of the vocals.
-              <br/><br/>
-            </p>
+
+
+        <div id="overlay"><h2>"movement" is an installation-inspired web piece that explores the Web Audio API and p5js.</h2>
+          <p class="ContentItem">
+            It is a reimagining of <a target="_blank" href="http://recodeproject.com/artwork/v2n3random-squares"><i>William Kolomyjec's 1977 'Random Squares.'</i></a><br/>
+            As you move your cursor from the left to the right, more nested sqaures are generated, and more vocal tracks are put into the mix.<br/>
+            up and down movement controls framerate as well as amplitude modulation of all of the vocals.
+            <br/>
+          </p>
+  				<p class="ContentItem"
+            Slowly move your cursor from the top left to the top right at first. <br/>
+            Then feel free to explore this instrument.<br/>
+            <button id="startButton">Click to start interactive Audio</button>
+            <br/>
+          </p>
+        </div>
+        <div>
+          <div id="sketch-holder" >
+            <!-- p5js sketch goes here -->
           </div>
-    				<p>
-              Slowly move your cursor from the top left to the top right at first. <br/>
-              Then feel free to explore this instrument.<br/>
-              <button id="startButton">Click to start interactive Audio</button>
-              <br/>
-            </p>
-    		</div>
-        <div id="sketch-holder">
-          <!-- p5js sketch goes here -->
         </div>
         <div id="audioContainers" style="display: none;">
           <audio loop>

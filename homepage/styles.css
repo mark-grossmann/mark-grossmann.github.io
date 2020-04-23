@@ -1,4 +1,7 @@
 /* general/defualt prty prty prty things (& formatting)*/
+*{
+  line-height: 1.2;
+}
 body {
   margin: 0;
   background-color: black;
@@ -104,6 +107,11 @@ color: #444;
         text-align: center;
         background-color: black;
       }
+      /* #sketch-holder{
+        width: 100%;
+        margin: 0;
+
+      } */
 
 /*Flexbox things*/
 #nav {
@@ -165,6 +173,7 @@ color: #444;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   #resume{
     margin-left: 20vw;
@@ -172,6 +181,11 @@ color: #444;
   }
 
   @media (max-width: 900px) {
+    *{
+      margin: 0;
+      padding: 0;
+      line-height: 2;
+    }
     .Sidebar {
       grid-column: 1 / 5;
       grid-row: 2 / 4 ;
@@ -204,16 +218,26 @@ color: #444;
         font-family: 'Quattrocento', serif;
         display: block;
       }
+    .GridWrapper{
+      display: flex;
+      flex-direction: column;
+    }
     #ContentFlex{
-      display: block;
+      flex-direction: column;
+    }
+    #summary{
+      flex-direction: column;
+    }
+    #sum-child{
+      flex-grow: 2;
     }
     .Content {
-      grid-column: 1 / 5;
+      grid-column: 1 / 4;
       grid-row: 4 / 6;
       font-family: 'Quattrocento', serif;
     }
     .Footer {
-      grid-column: 1 / 5;
+      grid-column: 1 / 4;
       grid-row: 6 ;
       text-align: center;
       font-family: 'Quattrocento', serif;
