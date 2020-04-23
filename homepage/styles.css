@@ -30,6 +30,12 @@ h3{
   text-align: left;
   font-family: 'Quattrocento', serif;
 }
+h4{
+  color: SteelBlue;
+  font-size: 4vh;
+  text-align: justify;
+  font-family: 'Space Mono', monospace;
+}
 p {
   font-size: 2vh;
   line-height: 4vh;
@@ -151,10 +157,14 @@ color: #444;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-grow: 1;
     /* width: 100%;
     height: 100%;*
     margin: 1rem; */
+  }
+  #summary{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   #resume{
     margin-left: 20vw;
@@ -209,11 +219,6 @@ color: #444;
       font-family: 'Quattrocento', serif;
       background-color: black;
       font-size: 3vh;
-    }
-    #summary{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
     }
     #resume{
       margin: 0;
