@@ -10,11 +10,12 @@ Like scale the div w/ the pic inside as opposed to scale it alone.
 This is just so that the pictures fill whatever div they're inside*/
 width:100%;
 height: auto;
+max-width: 100%;
 }
 h1 {
   color: SteelBlue;
-  font-size: 5vh;
-  text-align: center;
+  font-size: 5vw;
+  text-align: left;
   font-family: 'Space Mono', monospace;
 }
 h2 {
@@ -32,6 +33,7 @@ h3{
 p {
   font-size: 2vh;
   line-height: 4vh;
+  text-align: justify;
   font-family: 'Quattrocento', serif;
 }
 a {
@@ -64,11 +66,6 @@ background-color: #fff;
 color: #444;
 }
     .GridCell {
-      /*
-      I no longer need to see where the boxes are on the page.
-      background-color: #444;
-      color: #fff;
-      */
       border-radius: 0px;
       padding: 20px;
       margin: 0;
@@ -76,18 +73,11 @@ color: #444;
       .Logo {
         grid-column: 1 ;
         grid-row: 1 ;
-/*
-        width: 50%;
-        height: auto;
-*/
         background-color: SteelBlue;
       }
       .Title {
         grid-column: 2 / 5;
         grid-row: 1 ;
-        font-family: 'Space Mono', monospace;
-        color: SteelBlue;
-        font-size: 5vw;
         justify-content: center;
         background-color: black;
 
@@ -99,7 +89,7 @@ color: #444;
         grid-row-end: 4 ;
         }
       .Content {
-        grid-column: 2 / 5;
+        grid-column: 1 / 5;
         grid-row: 2 / 4;
       }
       .Footer {
@@ -110,16 +100,16 @@ color: #444;
       }
 
 /*Flexbox things*/
-#VertNav {
+#nav {
   /*FOR SIDEBAR: container for vertical nav bar*/
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   list-style-type: none;
   text-align: center;
-  float: left;
+  /* float: left; */
 }
   .VertNavItem{
     /*items in vertical left side nav bar container*/
@@ -129,24 +119,28 @@ color: #444;
     margin: 1em;
     font-size: 1.2vw;
     font-family: 'Quattrocento', serif;
-    display: block;
-
+  }
+  #CurrentPage{
+    background-color: AquaMarine;
   }
 #ContentFlex{
   /*turn content grid area into a flex container*/
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-content: center;
+  align-content: space-between;
   font-family: 'Quattrocento', serif;
 }
 /*items in content flexbox:*/
   .ContentImg{
-    flex: 2 1 40%;
+    flex: 5 1 40%;
     align-self: flex-start;
-    width: 40%;
-    height: auto;
     font-family: 'Quattrocento', serif;
+    margin: 1rem;
+    min-height: 1000px;
+  }
+  .ContentImg img{
+    display: block;
   }
   .ContentItem{
     flex: 0 1 40%;
@@ -156,6 +150,9 @@ color: #444;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* width: 100%;
+    height: 100%;
+    margin: 1rem; */
   }
 
   @media (max-width: 900px) {
@@ -164,7 +161,7 @@ color: #444;
       grid-row: 2 / 4 ;
       margin: 0 ;
     }
-    #VertNav {
+    #nav {
       /*FOR SIDEBAR: container for vertical nav bar*/
       flex-grow: 1;
       display: flex;
@@ -189,6 +186,7 @@ color: #444;
         list-style-type: none;
         text-align: center;
         font-family: 'Quattrocento', serif;
+        display: block;
       }
     #ContentFlex{
       display: block;
