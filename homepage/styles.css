@@ -1,6 +1,8 @@
 /* general/defualt prty prty prty things (& formatting)*/
 *{
   line-height: 1.2;
+  margin: 0;
+  padding: 0;
 }
 body {
   margin: 0;
@@ -146,6 +148,7 @@ color: #444;
     margin: 1em;
     font-size: 1.2vw;
     font-family: 'Quattrocento', serif;
+    text-align: center;
   }
   #CurrentPage{
     background-color: AquaMarine;
@@ -186,6 +189,14 @@ color: #444;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+  #blurb{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  #blurb p{
+    line-height: 1.3;
+    text-align: justify;
   }
   #resume{
     margin-left: 20vw;
@@ -258,6 +269,9 @@ color: #444;
       font-size: 3vh;
     }
     #resume{
+      margin: 0;
+    }
+    #blurb{
       margin: 0;
     }
 
