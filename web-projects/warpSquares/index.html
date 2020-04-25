@@ -2,45 +2,49 @@
 <html lang="en" dir="ltr">
 <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <head>
-
     <title>warpSquares | Mark Grossmann</title>
-
-    <!--stylesheet-->
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" type="text/css" href="../homepage/styles.css">
-    <!--FONTS-->
+    <!-- stylesheet(s) -->
+    <link rel="stylesheet" type="text/css" href="../../homepage/styles.css">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-  </head>
-  <body>
-
+    </head>
+    <body>
     <div class="GridWrapper">
 
       <div class="GridCell Logo">
-        <a href="../"><img class="ContainImg" src="../homepage/ParisFence.jpg" alt="Logo image: a photo from Parc Montsouris"></a>
+        <a href="../../"><img class="ContainImg" src="../../homepage/ParisFence.jpg" alt="Logo image: a photo from Parc Montsouris"></a>
       </div>
 
-      <div class="GridCell Title"><h1>Mark Grossmann</h1>
-        <div class="ContentItem" id="summary">
-          <p id="sum-child">Web Programmer</p>
-          <p id="sum-child">Audio Technician</p>
-          <p id="sum-child">Composer</p>
-          <p id="sum-child">Educator</p>
-        </div>
+      <header class="GridCell Title"><h1>Mark Grossmann</h1>
+        <ul class="ContentItem" id="subtitle">
+          <li><p>Web Programmer</p></li>
+          <li><p>Audio Technician</p></li>
+          <li><p>Composer</p></li>
+          <li><p>Educator</p></li>
+        </ul>
         <div id="nav">
-          <li><a class="VertNavItem" href="../">About</a></li>
-          <li><a class="VertNavItem" href="../movement">movement</a></li>
-          <li><a class="VertNavItem" id="CurrentPage" href="../warpSquares">warpSquares</a></li>
-          <li><a class="VertNavItem" href="../hyperFocus">Hyper Focus</a></li>
+          <li><a class="NavItem" href="../../">About</a></li>
+          <li class="NavDrop"><a class="NavItem" id="CurrentNavDropPage" href="../movement">Web Projects</a>
+          <ul class=NavDropList>
+            <li><a class="NavDropItem" href="../movement">movement</a></li>
+            <li><a class="NavDropItem" href="../warpSquares" id="CurrentNavDropPage">warpSquares</a></li>
+            <li><a class="NavDropItem" href="../HyperFocus">Hyper Focus</a></li>
+          </ul>
+        </li>
+          <li><a class="NavItem" href="../../music">Music</a></li>
         </div>
-      </div>
+      </header>
+
+
 
       <div class="GridCell Content" id="ContentFlex">
-        <div>
+        <article>
           <h2>warpSquares procedurally generates images on html canvas.</h2><br/>
 
-        </div>
-        <div class="ContentItem">
+        </article>
+        <article class="ContentItem center">
           <div id="control">
             <button type="button" id="start" style="display: flex";>Generate</button>
             <button type="button" id="pause" style="display: none;">Pause</button>
@@ -48,8 +52,8 @@
           </div>
           <p><br/><br/></p>
           <canvas id="warpSquares"></canvas>
-        </div>
-        <p id="resume">These are some of my favorite generated images.</p>
+        </article>
+        <p class="center">These are some of my favorite generated images.</p>
         <div id="flexContainer">
           <a href="./warp1.png"><div class="containImage"><img src="./warp1.png" alt="a result of a generative html-canvas piece"/></div></a>
           <a href="./warp2.png"><div class="containImage"><img src="./warp2.png" alt="a result of a generative html-canvas piece"/></div></a>
@@ -61,12 +65,13 @@
           <a href="./warp8.png"><div class="containImage"><img src="./warp8.png" alt="a result of a generative html-canvas piece"/></div></a>
           <a href="./warp9.png"><div class="containImage"><img src="./warp9.png" alt="a result of a generative html-canvas piece"/></div></a>
         </div>
-      </div>
+      </div><!-- end of content -->
       <!-- I know this is really funky but sometimes it be like that -->
       <p><br/><br/><br/><br/><br/></p>
 
-      <div class="GridCell Footer"><p>&#169; 2020 Mark Grossmann</p></div>
-    </div>
+      <footer class="GridCell Footer"><p>&#169; 2020 Mark Grossmann</p></footer>
+    </div><!-- end of Grid structure -->
+
     <script type="text/javascript">
       function randomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));

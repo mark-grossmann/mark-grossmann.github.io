@@ -1,69 +1,125 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <title>movement | Mark Grossmann</title>
+    <!-- stylesheet(s) -->
+    <link rel="stylesheet" type="text/css" href="../../homepage/styles.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <!-- p5 library -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
-  </head>
-  <body>
-    <div id="overlay">
-			<div>
-				<p>Slowly move your cursor from the top left to the top right. <br/>explore this instrument.</p>
-        <button id="startButton">Click to start interactive Audio</button>
-			</div>
-		</div>
-    <div id="audioContainers" style="display: none;">
-      <audio loop>
-         <source src="./audio/v01.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v02.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v03.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v04.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v05.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v06.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v07.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v08.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v09.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v10.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v11.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v12.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v13.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v14.mp3" type="audio/mp3">
-      </audio>
-      <audio loop>
-         <source src="./audio/v15.mp3" type="audio/mp3">
-      </audio>
-    </div>
+    </head>
+    <body>
+    <div class="GridWrapper">
+
+      <div class="GridCell Logo">
+        <a href="../../"><img class="ContainImg" src="../../homepage/ParisFence.jpg" alt="Logo image: a photo from Parc Montsouris"></a>
+      </div>
+
+      <header class="GridCell Title"><h1>Mark Grossmann</h1>
+        <ul class="ContentItem" id="subtitle">
+          <li><p>Web Programmer</p></li>
+          <li><p>Audio Technician</p></li>
+          <li><p>Composer</p></li>
+          <li><p>Educator</p></li>
+        </ul>
+        <div id="nav">
+          <li><a class="NavItem" href="../../">About</a></li>
+          <li class="NavDrop"><a class="NavItem" id="CurrentNavDropPage" href="../movement">Web Projects</a>
+          <ul class=NavDropList>
+            <li><a class="NavDropItem" href="../movement" id="CurrentNavDropPage">movement</a></li>
+            <li><a class="NavDropItem" href="../warpSquares">warpSquares</a></li>
+            <li><a class="NavDropItem" href="../HyperFocus">Hyper Focus</a></li>
+          </ul>
+        </li>
+          <li><a class="NavItem" href="../../music">Music</a></li>
+        </div>
+      </header>
+
+
+
+      <div class="GridCell Content" id="ContentFlex">
+        <h2>"movement" is an installation-inspired web piece that explores the Web Audio API and p5js.<br/></h2>
+        <div id="overlay" class="center">
+          <p>
+            This is a reimagining of <a target="_blank" href="http://recodeproject.com/artwork/v2n3random-squares"><i>William Kolomyjec's 1977 'Random Squares.'</i></a>
+            <br/><br/>
+            As you move your cursor from the left to the right, more nested sqaures are generated, and more vocal tracks are put into the mix.<br/>
+            Up and down movement controls framerate as well as amplitude modulation of all of the vocals.
+            <br/><br/>
+          </p>
+  				<p>
+            Slowly move your cursor from the top left to the top right at first. <br/>
+          </p>
+          <div class="flexCenter"><button id="startButton" class="center">Click to start interactive Audio</button></div>
+        </div>
+
+        <div class="flexCenter">
+          <div id="sketch-holder" >
+            <!-- p5js sketch goes here -->
+          </div>
+        </div>
+
+        <div id="audioContainers" style="display: none;">
+          <audio loop>
+             <source src="./audio/v01.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v02.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v03.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v04.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v05.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v06.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v07.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v08.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v09.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v10.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v11.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v12.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v13.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v14.mp3" type="audio/mp3">
+          </audio>
+          <audio loop>
+             <source src="./audio/v15.mp3" type="audio/mp3">
+          </audio>
+        </div>
+      </div><!-- end of content -->
+
+
+
+      <footer class="GridCell Footer"><p>&#169;2020 Mark Grossmann</p></footer>
+    </div><!-- end of Grid structure -->
+
+
+
     <script type="text/javascript">
-
-
       startButton.addEventListener( 'click', init );
-
 
       function mspScale(input, inpMin, inpMax, outMin, outMax) {
         //based on |scale| obect from max/msp
@@ -72,7 +128,8 @@
       }
 
       function setup() {
-        createCanvas(window.innerWidth, window.innerHeight);
+        let canvas = createCanvas(window.innerWidth, window.innerHeight);
+        canvas.parent('sketch-holder');
         frameRate(20);
       }
       function windowResized() {
@@ -95,11 +152,9 @@
         grid = Math.floor(mspScale(xPos, 0, width, 0, 9)) + 2; //I want the screen split in 10 distinct sections. later I'll use these to play different audio clips.
         console.log(grid);
         let vertGrid = Math.ceil(grid*aspectRatio); //so that fewer rows than collumns are drawn (depending on aspect ratio).
-        //The fans on my laptop were going insane with too many squares being drawn
 
         fps = Math.ceil(mspScale(yPos, 0, height, 1, 60)); //if frame rate gets to zero it becomes stuck there. :(
         frameRate(fps);
-
         let a = 0;
         let b = 0;
         let c = (size/grid);
@@ -112,7 +167,6 @@
         let slantB = random(3);
         let slantC = random(3);
         let slantD = random(3);
-
 
         for (let z=0; z < vertGrid; z++){
           for (let n=0; n < grid; n++){
@@ -150,7 +204,6 @@
         //console.log(count);
         }
       }
-
       // AUDIO THINGS
       let audioIsInitialized = 0;
       let audioCtx;
@@ -293,15 +346,13 @@
             break;
         }
       }
-
       changeLfoFreq =()=> {lfo.frequency.setValueAtTime(fps, audioCtx.currentTime);}
       window.addEventListener('mousemove', changeLfoFreq);
       window.addEventListener('mousemove', muteTracks);
 
       // update scale when the window is resized
+      // THIS IS BROKEN RIGHT NOW.
       window.addEventListener('resize', setup);
-
     </script>
-
   </body>
 </html>
