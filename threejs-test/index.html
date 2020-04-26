@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Image Depth Map</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #drawing {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      audio{
+        position: relative;
+        top: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <canvas id="drawing" width="200" height="200"></canvas>
+      <audio id="audio" src="./pretend-that.mp3" controls></audio>
+    </div>
+
+    <div style="display: none">
+      <img src="./heart.jpg" id="imgToProcess" alt="imgToProcess">
+    </div>
+
+    <script src="./three.min.js"></script>
+    <script src="./OrbitControls.js"></script>
+    <script src="./depth-map.js"></script>
+  </body>
+</html>

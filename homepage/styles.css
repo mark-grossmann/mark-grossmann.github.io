@@ -8,6 +8,10 @@ body {
   margin: 0;
   background-color: black;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  padding-left: 12%;
+  padding-right: 12%;
 }
 /* picture formatting */
 .ContainImg {
@@ -272,6 +276,9 @@ color: #444;
     margin: 0;
     padding: 0;
     line-height: 2;
+  }
+  body{
+    padding: 0;
   }
   button{
     font-size: 3vh;
