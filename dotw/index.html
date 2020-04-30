@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FIREFOX PLEASE USE</title>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <style>
+      body {
+        background-color: black;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      p {
+        color: white;
+        font-size: 2vh;
+        line-height: 5vh;
+        text-align: justify;
+        font-family: 'Quattrocento', serif;
+        padding: 5px;
+        margin: 0;
+      }
+      button{
+        display: block;
+        color: white;
+        background-color: black;
+        padding: 20px;
+        margin: 1em;
+        font-size: 1.2vw;
+        font-family: 'Quattrocento', serif;
+        text-align: center;
+      }
+      button:hover{
+        color: SteelBlue;
+      }
+      button:active{
+        color: AquaMarine;
+      }
+      audio{
+        position: relative;
+        top: 300px;
+      }
+      canvas{
+        /* set threejs canvas styles */
+        z-index: 40;
+      }
+      #overlay{
+        z-index: 100;
+        background-color: black;
+      }
+      #bkgd{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="./three.min.js"></script>
+    <script src="./OrbitControls.js"></script>
+
+    <div id="overlay">
+      <p>***USE FIREFOX FOR NOW***<br/>
+        Please note that this only works if the live stream is working and only in chrome for now.
+         Sometimes the mu38 on here breaks and I have to update it to a newer one.<br/>
+        after you click play you should see the live stream from
+        <a href="https://www.earthcam.com/usa/newyork/timessquare/?cam=tsstreet" target="_blank">here</a>
+        on a web gl plane.<br/>
+        it's been a bit of a cat and mouse game with their .mu38 links, unfortuneately.<br/>
+
+        this is a proof of concept to show that a live stream can be processed through three js!
+      <button>start</button>
+    </p>
+    </div>
+
+    <div style="display: none">
+      <video id="video" controls></video>
+    </div>
+
+    <script src="./process-live-video.js"></script>
+
+  </body>
+</html>
