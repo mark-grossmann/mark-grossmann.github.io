@@ -1,5 +1,5 @@
 // grab live video into video tag
-const hlsSource = "https://videos-3.earthcam.com/fecnetwork/9974.flv/chunklist_w1534282005.m3u8";
+const hlsSource = "https://videos-3.earthcam.com/fecnetwork/9974.flv/chunklist_w2024360066.m3u8"; // this link is what frequently breaks.
 const video = document.getElementById('video');
   if (Hls.isSupported()) {
     var hls = new Hls();
