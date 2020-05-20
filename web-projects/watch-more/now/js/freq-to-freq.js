@@ -94,7 +94,7 @@ function init() {
 
   document.body.appendChild(renderer.domElement);
   // put THREE canvas infront after it's been created
-  document.querySelectorAll("canvas")[1].style.zIndex="40";
+  document.querySelectorAll("canvas")[1].style.zIndex="-9999";
 
   // turn video into texture
   video.play();
@@ -169,7 +169,7 @@ function animate() {
   }else{
     mesh.position.y = 0;
   }
-  
+
   requestAnimationFrame(animate);
 }
 
