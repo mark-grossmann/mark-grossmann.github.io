@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>watch more | then</title>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
+    <!-- stylesheet(s) -->
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <style>
+      #bkgd{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      }
+      #overlay{
+        background-color: black;
+        z-index: 40;
+        border: 1px solid white;
+        border-radius: 5px;
+        margin: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <nav id="nav">
+      <div class="NavDrop"><a class="NavItem" href="../">watch more</a>
+        <ul class=NavDropList>
+          <li><a class="NavDropItem" href="./now">now</a></li>
+          <li><a class="NavDropItem" href="./here">here</a></li>
+          <li><a class="NavDropItem" href="../">back to home</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="overlay" class="center">
+      <h2 class="center">Welcome to my Senior Recital! </h2>
+      <p class="center">This is best experienced with headphones. Originally for my recital I planned to set up small exhibits in a room for guests to walk through instead of having it be one long straight shot of performances.
+        This set of pieces is about about all of the interactions I've had through screens lately. However, in being in a long distance relationship with someone who lives in Abu Dhabi for over a year,
+        this isn't very new to me. My virtual life is something I think about very often.
+      <br/>
+      Please don't use Safari, unfortunately it does not support parts of the web Audio api that this uses.<br/>
+      <br/> ps. move your mouse from right to left, up and down.</p>
+      <div class="flexCenter"><button id="startButton" class="center">Click to start video and audio</button></div>
+    </div>
+
+    <canvas id="bkgd"></canvas>
+
+
+    <div style="display: none">
+      <video loop src="./timesSquare.m4v" alt="Waves"></video>
+    </div>
+
+    <script src="./bkgd.js"></script>
+  </body>
+</html>

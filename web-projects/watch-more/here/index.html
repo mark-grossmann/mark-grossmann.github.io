@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>watch more | here</title>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
+    <!-- stylesheet(s) -->
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <style>
+      #overlay{
+        background-color: black;
+        z-index: 40;
+        border: 1px solid white;
+        border-radius: 5px;
+        margin: 1em;
+      }
+      #webcam{
+        width: 384px;
+        height: 216px;
+        background-color: #666;
+      }
+      canvas {
+        /* put the three.js drawing in the way way back */
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -9999;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <nav id="nav">
+      <div class="NavDrop"><a class="NavItem" href="../">watch more</a>
+        <ul class=NavDropList>
+          <li><a class="NavDropItem" href="../now">now</a></li>
+          <li><a class="NavDropItem" href="../here">here</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="overlay">
+      <p>Explore how the music interacts with different objects & different colors. <br/>
+        Height of pixels with low color frequency = amplitude of low audio frequency - same for the rest of the spectrums.<br/>
+      (ps. this works best when there's a lot of light around)</p>
+      <div class="flexCenter"><button id="startButton" class="center">Click to start audio</button></div>
+    </div>
+
+    <div style="display: none">
+      <video autoplay="true" muted alt="displays your webcam feed if you allowed it." id="webcam"></video>
+      <canvas id="drawing" width="384" height="216"></canvas>
+      <audio id="audio" src="./pretend-that.mp3" controls></audio>
+      <!-- this video tag will have the web cam inside of it -->
+    </div>
+
+    <script src="./js/three.min.js"></script>
+    <script src="./js/OrbitControls.js"></script>
+    <script src="./js/freq-to-freq.js"></script>
+  </body>
+</html>
