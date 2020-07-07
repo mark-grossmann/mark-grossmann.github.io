@@ -1,5 +1,3 @@
-/*I stole this css from my own website... none of my grid system is being used, sorry for the mess I'm just using it as a library.*/
-
 /* general/defualt prty prty prty things (& formatting)*/
 *{
   line-height: 1.2;
@@ -11,9 +9,9 @@ body {
   background-color: black;
   padding: 0;
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  justify-content: space-around;
+  justify-content: center;
+  padding-left: 12%;
+  padding-right: 12%;
 }
 /* picture formatting */
 .ContainImg {
@@ -55,19 +53,19 @@ h4{
   margin: 0;
 }
 p {
-  color: white;
   font-size: 2vh;
   line-height: 5vh;
-  text-align: center;
+  text-align: justify;
   font-family: 'Quattrocento', serif;
   padding: 5px;
   margin: 0;
 }
 button{
+  display: block;
   color: white;
   background-color: black;
   padding: 20px;
-  margin: 0.5em;
+  margin: 1em;
   font-size: 1.2vw;
   font-family: 'Quattrocento', serif;
   text-align: center;
@@ -81,7 +79,7 @@ button:active{
 /* links */
 a {
   text-decoration: none;
-  color: inherit;
+  color: black;
 }
 a:hover {
   color: SteelBlue;
@@ -163,34 +161,31 @@ color: #444;
   .NavItem{
     /*items in nav bar container*/
     display: block;
-    color: white;
-    padding: 0.5em 1em 0.5em 1em;
+    color: black;
+    background-color: SteelBlue;
+    padding: 20px;
     margin: 1em;
-    font-size: 2.3vw;
+    font-size: 1.2vw;
     font-family: 'Quattrocento', serif;
     text-align: center;
   }
   .NavDrop{
     position: relative;
     display: inline-block;
-    z-index: 60;
-    margin: 1em;
-    padding: 0.5em 1em 0.5em 1em;
+    z-index: 20;
   }
   .NavDropList{
     display: none;
     position: absolute;
     list-style-type: none;
     text-align: center;
-    z-index: 65;
+    background-color: black;
   }
-  .NavDrop:hover .NavDropList {
-    display: block;
-  }
+  .NavDrop:hover .NavDropList {display: block;}
   .NavDropItem{
     display: block;
-    color: rgb(156, 38, 148);
-    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    background-color: black;
     padding: 20px;
     margin: 1em;
     font-size: 1.2vw;
@@ -198,12 +193,12 @@ color: #444;
     text-align: center;
   }
   .NavDrop:hover .NavItem {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: rgb(242, 12, 95);
+    background-color: black;
+    color: SteelBlue
   }
   .NavDropItem:hover{
     background-color: black;
-    color: rgb(242, 12, 95);
+    color: SteelBlue;
   }
   .NavDropItem:active{
     background-color: black;
