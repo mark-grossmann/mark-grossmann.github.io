@@ -10,14 +10,17 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  padding-left: 12%;
-  padding-right: 12%;
+  /* padding-left: 12%;
+  padding-right: 12%; */
 }
 /* picture formatting */
 .ContainImg {
 width:100%;
 height: auto;
 max-width: 100%;
+}
+b{
+  color: black;
 }
 h1 {
   color: SteelBlue;
@@ -29,7 +32,7 @@ h1 {
 }
 h2 {
   color: SteelBlue;
-  font-size: 4vh;
+  font-size: 3vw;
   text-align: left;
   font-family: 'Space Mono', monospace;
   padding: 0;
@@ -37,7 +40,7 @@ h2 {
 }
 h3{
   color: black;
-  font-size: 2.4vh;
+  font-size: 2vw;
   text-align: left;
   font-family: 'Quattrocento', serif;
   padding: 0;
@@ -46,14 +49,14 @@ h3{
 h4{
   /* same as h2 except centered. */
   color: SteelBlue;
-  font-size: 4vh;
+  font-size: 4vw;
   text-align: center;
   font-family: 'Space Mono', monospace;
   padding: 0;
   margin: 0;
 }
 p {
-  font-size: 2vh;
+  font-size: 1.6vw;
   line-height: 5vh;
   text-align: justify;
   font-family: 'Quattrocento', serif;
@@ -79,7 +82,7 @@ button:active{
 /* links */
 a {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 a:hover {
   color: SteelBlue;
@@ -89,6 +92,10 @@ a:active {
   /*being clicked*/
   color: SteelBlue;
   background-color: AquaMarine;
+}
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 /*moving onto grid things*/
@@ -161,7 +168,7 @@ color: #444;
   .NavItem{
     /*items in nav bar container*/
     display: block;
-    color: black;
+    color: white;
     background-color: SteelBlue;
     padding: 20px;
     margin: 1em;
@@ -270,7 +277,13 @@ color: #444;
     justify-content: space-around;
     margin: 0;
   }
-
+  .indent{
+    padding-left: 10%;
+  }
+  .flexContainer{
+    display: flex;
+    flex-direction: row;
+  }
 @media (max-width: 900px) {
   *{
     margin: 0;
@@ -280,6 +293,23 @@ color: #444;
   body{
     padding: 0;
   }
+  h1 {
+    font-size: 6vw;
+  }
+  h2 {
+    font-size: 5vw;
+  }
+  h3 {
+    font-size: 4vw;
+  }
+  h4 { 
+    /* same as h2 except black */
+    font-size: 5vw;
+  }
+  p{
+    font-size: 3vw;
+  }
+
   button{
     font-size: 3vh;
     margin: none;
@@ -327,12 +357,15 @@ color: #444;
     font-size: 3vh;
   }
   .center{
-    margin: 1em;
-    padding: 1em;
+    margin: 0;
+    padding: 0, 2%, 0, 2%;
     max-width: 100%;
   }
   .text{
     margin: 0;
+  }
+  .flexContainer{
+    flex-direction: column;
   }
 
 }
