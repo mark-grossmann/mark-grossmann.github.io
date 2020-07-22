@@ -176,6 +176,10 @@ color: #444;
     font-family: 'Quattrocento', serif;
     text-align: center;
   }
+  #nav li a{
+    /* for some reason a single class isn't getting the color correct so I had to do this... */
+    color: white;
+  }
   .NavDrop{
     position: relative;
     display: inline-block;
