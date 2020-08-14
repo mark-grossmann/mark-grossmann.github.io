@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway+Dots&display=swap');
+
+body {
+  background-color: black;
+}
+
+/* text */
+
+p, nav {
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  line-height: 1.3em;
+}
+
+h1, h2, h3 {
+  color: white;
+  font-family: 'Raleway Dots', Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* links */
+
+a:link, a:visited {
+  color: white;
+  background: gray;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+  
+a:hover {color: black;}
+  
+a:active {background: white;}
+
+/* layout */
+
+#container {
+  width: 90%;
+  margin: auto;
+}
+
+main {
+  margin-top: 4em;
+  border-top: 1px dotted white;
+}
+
+footer {
+  margin-top: 2em;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+nav > a {
+  margin-right: 1em;
+}
+
+/* positioning */
+
+img.shift {
+  width: 100px;
+  height: auto;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  transition: filter 600ms;
+}
+
+img.shift:hover {
+  filter: blur(8px);
+}
+
+img.shift:active {
+  opacity: 0.7;
+}
+
+/* media query */
+
+@media (min-width: 960px) {
+  article {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  article > p {
+    width: 32%;
+  }
+}

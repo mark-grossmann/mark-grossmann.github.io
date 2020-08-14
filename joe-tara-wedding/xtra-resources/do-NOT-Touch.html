@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>vido-js-contrib-hls embed</title>
+    <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .centered {
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Video.js Example Embed</h1>
+        <div class="centered">
+            
+            <video-js id=vid1 width=600 height=300 class="vjs-default-skin" controls>
+                <source src="live/hello.m3u8" type="application/x-mpegURL">
+            </video-js>
+            <script src="https://vjs.zencdn.net/7.8.2/video.js"></script>
+            <script src="https://unpkg.com/@videojs/http-streaming@1.13.3/dist/videojs-http-streaming.js"></script>
+            <script>
+                var player = videojs('vid1');
+                player.play();
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
